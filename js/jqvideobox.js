@@ -1,9 +1,9 @@
 /*
- jqVideoBox 1.00
+ jqVideoBox 1.01
  - Jquery version required: 1.2.x, 1.3.x
  
  Changelog:
- 
+ - 1.01 added Vimeo support
  - 1.00 ported from mootools plugin videbox (http://videobox-lb.sourceforge.net/) to jquery
  */
  
@@ -128,6 +128,17 @@ jQuery(
 						so = new SWFObject("http://www.youtube.com/v/"+videoID, "flvvideo", options.contentsWidth, options.contentsHeight, "0");
 						so.addParam("wmode", "transparent");
 					}
+/* VIMEO SUPPORT START */
+					else if (sLinkHref.match(/vimeo\.com/i)) 
+					{
+				      	flash = true;
+						var hRef = sLinkHref;
+						var videoId = hRef.split('/');
+						videoID = videoId[3];
+						so = new SWFObject("http://vimeo.com/moogaloop.swf?clip_id="+videoID+"", "flvvideo", options.contentsWidth, options.contentsHeight, "0");
+						so.addParam("wmode", "transparent");
+					}
+/* VIMEO SUPPORT END */
 					else if (sLinkHref.match(/metacafe\.com\/watch/i)) 
 					{
 				      	flash = true;
