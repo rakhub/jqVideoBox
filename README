@@ -1,9 +1,9 @@
 /*
- jqVideoBox 1.00
+ jqVideoBox 1.01
  - Jquery version required: 1.2.x, 1.3.x
  
  Changelog:
- 
+ - 1.01 Added Vimeo support
  - 1.00 ported from mootools plugin videbox (http://videobox-lb.sourceforge.net/) to jquery
  */
  
